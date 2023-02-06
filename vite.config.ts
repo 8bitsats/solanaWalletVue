@@ -15,6 +15,7 @@ export default defineConfig({
     "process.env": {},
   },
   build: {
+    target: 'es2020',
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "solana-wallets-vue",
@@ -39,4 +40,9 @@ export default defineConfig({
     sourcemap: true,
     minify: false,
   },
+  optimizeDeps: {
+    esbuildOptions : {
+        target: "es2020"
+    }
+}
 });
